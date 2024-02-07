@@ -13,11 +13,14 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-// eslint-disable-next-line import/no-cycle
-export { getElements } from './fetch'
-export * as element from './element'
-export * as query from './query'
-export * as request from './request'
-export * as resource from './resource'
-export * as source from './source'
-export { FetchElements } from './types'
+import { definitions, fetch as fetchUtils } from '@salto-io/adapter-components'
+import { ClientOptions, PaginationOptions } from '../types'
+
+const { cursorPagination } = fetchUtils.request.pagination
+
+export const PAGINATION: Record<PaginationOptions, definitions.PaginationDefinitions<ClientOptions>> = {
+  // replace with the correct pagination function(s)
+  cursor: {
+    funcCreator: () => cursorPagination({ pathChecker: fetchUtils.request.pagination.defaultPathChecker, paginationField: 'next' }),
+  },
+}

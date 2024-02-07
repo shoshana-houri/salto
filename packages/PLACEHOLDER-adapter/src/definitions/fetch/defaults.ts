@@ -13,11 +13,21 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-// eslint-disable-next-line import/no-cycle
-export { getElements } from './fetch'
-export * as element from './element'
-export * as query from './query'
-export * as request from './request'
-export * as resource from './resource'
-export * as source from './source'
-export { FetchElements } from './types'
+import { types } from '@salto-io/lowerdash'
+import { DEFAULT_FIELD_CUSTOMIZATIONS, DEFAULT_ID_PARTS } from './shared'
+import { InstanceFetchApiDefinitions } from '../types'
+
+// TODON before finalizing, do another pass and make sure didn't accidentally leave "in"
+// fields as hidden/omitted because of hcange from override to merge
+
+export const FETCH_DEFAULTS: types.RecursivePartial<InstanceFetchApiDefinitions> = {
+  resource: {
+    serviceIDFields: ['id'],
+  },
+  element: {
+    topLevel: {
+      elemID: { parts: DEFAULT_ID_PARTS },
+    },
+    fieldCustomizations: DEFAULT_FIELD_CUSTOMIZATIONS,
+  },
+}

@@ -13,11 +13,23 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-// eslint-disable-next-line import/no-cycle
-export { getElements } from './fetch'
-export * as element from './element'
-export * as query from './query'
-export * as request from './request'
-export * as resource from './resource'
-export * as source from './source'
-export { FetchElements } from './types'
+import { deployment as deploymentUtils } from '@salto-io/adapter-components'
+import { DEFAULT_CONTEXT } from './utils'
+import { InstanceDeployApiDefinitions } from '../types'
+
+const { groupByType } = deploymentUtils.grouping
+
+export const DEPLOY_DEFAULTS: InstanceDeployApiDefinitions = {
+  requestsByAction: {
+    default: {
+      // TODON move template and reference resolution here in a generic way? first see cases
+      // additionalResolvers: [],
+      request: {
+        context: DEFAULT_CONTEXT,
+      },
+    },
+    customizations: {
+    },
+  },
+  changeGroupId: groupByType,
+}

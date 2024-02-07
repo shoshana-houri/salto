@@ -13,11 +13,14 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-// eslint-disable-next-line import/no-cycle
-export { getElements } from './fetch'
-export * as element from './element'
-export * as query from './query'
-export * as request from './request'
-export * as resource from './resource'
-export * as source from './source'
-export { FetchElements } from './types'
+import { FETCH_DEFAULTS } from './defaults'
+import { FETCH_DEFINITIONS } from './all'
+import { UserFetchConfig } from '../../config'
+import { FetchApiDefinitions } from '../types'
+
+export const createFetchDefinitions = (_userConfig: UserFetchConfig): FetchApiDefinitions => ({
+  instances: {
+    default: FETCH_DEFAULTS,
+    customizations: FETCH_DEFINITIONS,
+  },
+})

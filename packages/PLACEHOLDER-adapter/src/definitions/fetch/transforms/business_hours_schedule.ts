@@ -13,11 +13,21 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-// eslint-disable-next-line import/no-cycle
-export { getElements } from './fetch'
-export * as element from './element'
-export * as query from './query'
-export * as request from './request'
-export * as resource from './resource'
-export * as source from './source'
-export { FetchElements } from './types'
+import _ from 'lodash'
+import { definitions } from '@salto-io/adapter-components'
+import { values as lowerdashValues } from '@salto-io/lowerdash'
+
+export const transform: definitions.fetch.ResourceTransformFunc = ({ value }) => {
+  if (!lowerdashValues.isPlainObject(value)) {
+    throw new Error('unexpected value for business hour schedule, not transforming')
+  }
+  const startYear = _.get(value, 'start_date')?.split('-')[0]
+  const endYear = _.get(value, 'end_date')?.split('-')[0]
+  return {
+    value: {
+      ...value,
+      start_year: startYear,
+      end_year: endYear,
+    },
+  }
+}
