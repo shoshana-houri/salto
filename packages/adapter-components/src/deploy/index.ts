@@ -13,10 +13,4 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { FieldReferenceDefinition } from '../../references'
-
-export type ReferenceDefinitions = {
-  // rules for finding references - coverting values to references in fetch, and references to values in deploy.
-  // this is an array of arrays because rules can be run in multiple iterations during fetch,
-  rules: FieldReferenceDefinition<never>[]
-}
+export * from './placeholder_types'

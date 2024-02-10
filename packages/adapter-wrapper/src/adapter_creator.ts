@@ -46,12 +46,11 @@ const adapterConfigFromConfigNoValidations = <Co extends definitionUtils.UserCon
   return adapterConfig
 }
 
-// TODON move to dedicated credentials file - in adapter-components??? + this is not really safe...
+// TODON move to dedicated credentials file - in adapter-components? + this is not really safe...
 const defaultCredentialsFromConfig = <Credentials>(config: Readonly<InstanceElement>): Credentials => (
   config.value as Credentials
 )
 
-// TODON no need to ever re-implement this???
 export const createAdapter = <
   Credentials,
   Co extends definitionUtils.UserConfig = definitionUtils.UserConfig,
@@ -122,6 +121,7 @@ export const createAdapter = <
           config: config.client, // TODON require it?
         },
       }))
+      const definitions = definitionsCreator({ clients, userConfig: config })
       const adapterOperations = createAdapterImpl<
         Credentials,
         Co,
@@ -135,7 +135,7 @@ export const createAdapter = <
           clients,
           config,
           getElemIdFunc: context.getElemIdFunc,
-          definitions: definitionsCreator({ clients, userConfig: config }),
+          definitions,
           filterCreators: (
             customizeFilterCreators !== undefined
               ? customizeFilterCreators(config)
@@ -144,10 +144,10 @@ export const createAdapter = <
                   ClientOptions,
                   PaginationOptions,
                   Action
-                >({ config }))
-          ), // TODON generalize passing in params?
+                >({ config, definitions }))
+          ),
           adapterName,
-          accountName: adapterName, // TODON not true
+          accountName: adapterName, // TODON not true, fix
           configInstance: context.config, // TODON check if really needed
         },
         adapterImpl,
@@ -163,10 +163,10 @@ export const createAdapter = <
           }
         },
         deployModifiers: adapterOperations.deployModifiers,
-        // TODON check if should update based on sf/ns with additional parts???
+        // TODON check if should update based on sf/ns with additional parts?
       }
     },
-    validateCredentials, // TODON credentials cannot be validated based on config, because config doesn't exist yet
+    validateCredentials,
     authenticationMethods,
     configType: (configTypeCreator ?? definitionUtils.createUserConfigType)({ adapterName, defaultConfig }),
     configCreator: getConfigCreator(
