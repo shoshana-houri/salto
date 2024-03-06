@@ -181,26 +181,6 @@ export const FETCH_DEFINITIONS: Record<string, InstanceFetchApiDefinitions> = {
       },
     },
   },
-  attachment: {
-    requests: [
-      {
-        endpoint: {
-          path: '/attachments',
-        },
-        transformation: {
-          root: 'results',
-        },
-      },
-    ],
-    resource: {
-      directFetch: true,
-    },
-    element: {
-      topLevel: {
-        isTopLevel: true,
-      },
-    },
-  },
   page: {
     requests: [
       {
@@ -218,7 +198,26 @@ export const FETCH_DEFINITIONS: Record<string, InstanceFetchApiDefinitions> = {
     element: {
       topLevel: {
         isTopLevel: true,
+        serviceUrl: {
+          path: '/wiki/spaces/{spaceId.key}/pages/{id}',
+        },
+        elemID: {
+          parts: [
+            { fieldName: 'title' },
+            { fieldName: 'parentId', isReference: true },
+          ],
+        },
+        path: {
+          pathParts: [
+            {
+              parts: [ 
+                { fieldName: 'title' },
+              ],
+            },
+          ],
+        }
       },
+
     },
   },
 }

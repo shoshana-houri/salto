@@ -15,41 +15,17 @@
  */
 import { definitions, references as referenceUtils } from '@salto-io/adapter-components'
 
-// TODON add iteration numbers (running counter)
 const FIRST_ITERATION: referenceUtils.FieldReferenceDefinition<never>[] = [
   {
-    src: { field: 'brand' },
+    src: { field: 'spaceId' },
     serializationStrategy: 'id',
-    target: { type: 'brand' },
+    target: { type: 'space' },
   },
   {
-    src: { field: 'brand_id' },
+    src: { field: 'parentId', parentTypes: ['page']},
     serializationStrategy: 'id',
-    target: { type: 'brand' },
-  },
-  {
-    src: { field: 'brand_ids' },
-    serializationStrategy: 'id',
-    target: { type: 'brand' },
-  },
-  {
-    src: { field: 'category_id' },
-    serializationStrategy: 'id',
-    target: { type: 'trigger_category' },
-  },
-  {
-    src: { field: 'active', parentTypes: ['ticket_form_order'] },
-    serializationStrategy: 'id',
-    target: { type: 'ticket_form' },
-  },
-  {
-    src: {
-      field: 'id',
-      parentTypes: ['ticket_form__end_user_conditions__child_fields', 'ticket_form__agent_conditions__child_fields'],
-    },
-    serializationStrategy: 'id',
-    target: { type: 'ticket_field' },
-  },
+    target: { type: 'page' },
+  }
   // {
   //   src: {
   //     field: 'field',
@@ -75,6 +51,7 @@ const FIRST_ITERATION: referenceUtils.FieldReferenceDefinition<never>[] = [
 
 // TODON continue - missing references, custom context functions, second iteration
 
+// TODO add other rules
 export const REFERENCES: definitions.ApiDefinitions['references'] = {
   rules: FIRST_ITERATION,
 }
