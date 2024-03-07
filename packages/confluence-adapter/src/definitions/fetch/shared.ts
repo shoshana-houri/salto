@@ -22,13 +22,22 @@ export const DEFAULT_FIELDS_TO_HIDE: Record<string, definitions.fetch.ElementFie
   created_at: {
     hide: true,
   },
+  createdAt: {
+    hide: true,
+  },
   updated_at: {
+    hide: true,
+  },
+  updatedAt: {
     hide: true,
   },
   created_by_id: {
     hide: true,
   },
   updated_by_id: {
+    hide: true,
+  },
+  id: {
     hide: true,
   },
 }

@@ -194,6 +194,18 @@ export const FETCH_DEFINITIONS: Record<string, InstanceFetchApiDefinitions> = {
     ],
     resource: {
       directFetch: true,
+      recurseInto: {
+        restriction: {
+          typeName: 'restriction',
+          context: {
+            args: {
+              id: {
+                fromField: 'id',
+              },
+            },
+          },
+        },
+      },
     },
     element: {
       topLevel: {
@@ -210,6 +222,109 @@ export const FETCH_DEFINITIONS: Record<string, InstanceFetchApiDefinitions> = {
               parts: [{ fieldName: 'title' }],
             },
           ],
+        },
+      },
+    },
+  },
+  // TODO SVH: rename?
+  settings: {
+    requests: [
+      {
+        endpoint: {
+          path: '/wiki/rest/api/settings/lookandfeel',
+        },
+      },
+    ],
+    resource: {
+      directFetch: true,
+    },
+    element: {
+      topLevel: {
+        isTopLevel: true,
+        singleton: true,
+      },
+      fieldCustomizations: {
+        global: {
+          standalone: {
+            typeName: 'settings_global',
+            addParentAnnotation: false,
+            referenceFromParent: false,
+            nestPathUnderParent: false,
+          },
+        },
+        custom: {
+          standalone: {
+            typeName: 'settings_custom',
+            addParentAnnotation: false,
+            referenceFromParent: false,
+            nestPathUnderParent: false,
+          },
+        },
+      },
+    },
+  },
+  settings_global: {
+    element: {
+      topLevel: {
+        isTopLevel: true,
+        singleton: true,
+      },
+    },
+  },
+  settings_custom: {
+    element: {
+      topLevel: {
+        isTopLevel: true,
+        singleton: true,
+      },
+    },
+  },
+  blogpost: {
+    requests: [
+      {
+        endpoint: {
+          path: '/wiki/api/v2/blogposts',
+        },
+        transformation: {
+          root: 'results',
+        },
+      },
+    ],
+    resource: {
+      directFetch: true,
+    },
+    element: {
+      topLevel: {
+        isTopLevel: true,
+        elemID: {
+          parts: [{ fieldName: 'title' }],
+        },
+      },
+    },
+  },
+  restriction: {
+    requests: [
+      {
+        endpoint: {
+          path: '/wiki/rest/api/content/{id}/restriction',
+        },
+        transformation: {
+          root: 'results',
+        },
+      },
+    ],
+    element: {
+      topLevel: {
+        isTopLevel: true,
+      },
+      fieldCustomizations: {
+        restriction: {
+          standalone: {
+            typeName: 'restriction',
+            addParentAnnotation: true,
+            referenceFromParent: true,
+            nestPathUnderParent: true,
+          },
         },
       },
     },
