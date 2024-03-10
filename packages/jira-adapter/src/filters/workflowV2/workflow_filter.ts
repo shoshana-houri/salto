@@ -412,7 +412,7 @@ const convertParametersFieldsToString = (parameters: Values, listFields: Set<str
       parameters[key] = value.join(',')
     })
 }
-// TODO
+
 // Jira has a bug that causes conditionGroups to be required in the deployment requests
 // We should remove this once the bug is fixed - https://jira.atlassian.com/browse/JRACLOUD-82794
 const insertConditionGroups: WalkOnFunc = ({ value, path }): WALK_NEXT_STEP => {
