@@ -91,7 +91,7 @@ export const traversePages = async <ClientOptions extends string>({
         endpointIdentifier: finalEndpointIdentifier,
       })
 
-      // TODO update arg names when removing old config comment
+      // TODO update arg names when removing old config
       const alignedArgs = {
         queryParams: callArgsWithContext.callArgs.queryArgs,
         ..._.omit(callArgsWithContext.callArgs, 'queryArgs'),
