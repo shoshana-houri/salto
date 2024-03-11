@@ -234,7 +234,6 @@ export abstract class AdapterHTTPClient<TCredentials, TRateLimitConfig extends C
     }
 
     const { url, queryParams, headers, responseType } = params
-
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const logResponse = (res: Response<any>): void => {
       log.debug('Received response for %s on %s', method.toUpperCase(), url)

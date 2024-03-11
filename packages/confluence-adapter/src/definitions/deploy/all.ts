@@ -56,7 +56,7 @@ export const DEPLOY_DEFINITIONS: Record<string, InstanceDeployApiDefinitions> = 
                 method: 'post',
               },
               transformation: {
-                pick: ['restriction'],
+                root: 'restriction',
                 nestUnderField: 'results',
               },
             },
