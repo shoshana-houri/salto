@@ -81,7 +81,7 @@ export const FETCH_DEFINITIONS: Record<string, InstanceFetchApiDefinitions> = {
     requests: [
       {
         endpoint: {
-          path: '/wiki/api/v2/spaces',
+          path: '/wiki/rest/api/space',
         },
         transformation: {
           root: 'results',
@@ -141,6 +141,10 @@ export const FETCH_DEFINITIONS: Record<string, InstanceFetchApiDefinitions> = {
     element: {
       topLevel: {
         isTopLevel: true,
+        elemID: {
+          parts: [{ fieldName: 'principal.id' }, { fieldName: 'operation.key' }, { fieldName: 'operation.targetType' }],
+          extendsParent: true,
+        },
       },
     },
   },

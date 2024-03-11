@@ -45,6 +45,9 @@ export const DEFAULT_FIELDS_TO_OMIT: Record<string, definitions.fetch.ElementFie
   _links: {
     omit: true,
   },
+  _expandable: {
+    omit: true,
+  },
 }
 
 export const NAME_ID_FIELD: definitions.fetch.FieldIDPart = { fieldName: 'name' }

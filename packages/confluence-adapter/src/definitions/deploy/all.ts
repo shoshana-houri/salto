@@ -18,11 +18,83 @@ import { createStandardItemDeployConfigs } from './utils'
 import { InstanceDeployApiDefinitions } from '../types'
 
 export const DEPLOY_DEFINITIONS: Record<string, InstanceDeployApiDefinitions> = {
+  space_permission: {
+    requestsByAction: {
+      customizations: {
+        remove: [
+          {
+            request: {
+              endpoint: {
+                path: '/wiki/rest/api/space/{_parent.0.key}/permission/{id}',
+                method: 'delete',
+              },
+            },
+          },
+        ],
+      },
+    },
+  },
+  page: {
+    requestsByAction: {
+      customizations: {
+        add: [
+          {
+            request: {
+              endpoint: {
+                path: '/wiki/api/v2/pages',
+                method: 'post',
+              },
+              transformation: {
+                omit: ['restriction', 'version'],
+              },
+            },
+          },
+          {
+            request: {
+              endpoint: {
+                path: '/wiki/rest/api/content/{id}/restriction',
+                method: 'post',
+              },
+              transformation: {
+                pick: ['restriction'],
+                nestUnderField: 'results',
+              },
+            },
+          },
+        ],
+        modify: [
+          {
+            request: {
+              endpoint: {
+                path: '/wiki/api/v2/pages/{id}',
+                method: 'put',
+              },
+              transformation: {
+                omit: ['restriction, version'],
+              },
+            },
+          },
+        ],
+        remove: [
+          {
+            request: {
+              endpoint: {
+                path: '/wiki/api/v2/pages/{id}',
+                method: 'delete',
+              },
+              transformation: {
+                omit: ['restriction', 'version'],
+              },
+            },
+          },
+        ],
+      },
+    },
+  },
   ..._.merge(
     createStandardItemDeployConfigs({
       space: { bulkPath: '/wiki/rest/api/space', idField: 'key' },
-      page: { bulkPath: 'pages', idField: 'id' },
-      blogpost: { bulkPath: 'blogposts', idField: 'id' },
+      blogpost: { bulkPath: 'wiki/api/v2/blogposts', idField: 'id' },
     }),
   ),
   // TODON add more examples including transformations, move utility functions to adapter-components

@@ -20,33 +20,13 @@ const FIRST_ITERATION: referenceUtils.FieldReferenceDefinition<never>[] = [
     src: { field: 'spaceId' },
     serializationStrategy: 'id',
     target: { type: 'space' },
+    sourceTransformation: 'asString',
   },
   {
     src: { field: 'parentId', parentTypes: ['page'] },
     serializationStrategy: 'id',
     target: { type: 'page' },
   },
-  // {
-  //   src: {
-  //     field: 'field',
-  //     parentTypes: [
-  //       'view__conditions__all',
-  //       'view__conditions__any',
-  //       'macro__actions',
-  //       'trigger__conditions__all',
-  //       'trigger__conditions__any',
-  //       'trigger__actions',
-  //       'automation__conditions__all',
-  //       'automation__conditions__any',
-  //       'automation__actions',
-  //       'ticket_field__relationship_filter__all',
-  //       'ticket_field__relationship_filter__any',
-  //     ],
-  //   },
-  //   zendeskSerializationStrategy: 'ticketField',
-  //   zendeskMissingRefStrategy: 'startsWith',
-  //   target: { type: TICKET_FIELD_TYPE_NAME },
-  // },
 ]
 
 // TODON continue - missing references, custom context functions, second iteration
