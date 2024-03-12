@@ -44,6 +44,7 @@ export const createValueTransformer = <TContext extends Record<string, unknown>,
     def.nestUnderField !== undefined ? _.set({}, def.nestUnderField, value) : value
 
   const transformItem: TransformFunction<TContext, TSource, unknown> = item => {
+    // TODO project 58 might be wrong to make array
     const transformedValues = _(collections.array.makeArray(root(item.value)))
       .map(pick)
       .map(omit)

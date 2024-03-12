@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import _ from 'lodash'
 import { InstanceFetchApiDefinitions } from '../types'
 
 // TODO adjust
@@ -314,23 +315,17 @@ export const FETCH_DEFINITIONS: Record<string, InstanceFetchApiDefinitions> = {
         },
         transformation: {
           root: 'results',
+          adjust: item => ({
+            value: {
+              operation: _.get(item.value, 'operation'),
+              restrictions: {
+                user: _.get(item.value, 'restrictions.user.results'),
+                group: _.get(item.value, 'restrictions.group.results'),
+              }
+            },
+          }),
         },
       },
     ],
-    element: {
-      topLevel: {
-        isTopLevel: true,
-      },
-      fieldCustomizations: {
-        restriction: {
-          standalone: {
-            typeName: 'restriction',
-            addParentAnnotation: true,
-            referenceFromParent: true,
-            nestPathUnderParent: true,
-          },
-        },
-      },
-    },
   },
 }
