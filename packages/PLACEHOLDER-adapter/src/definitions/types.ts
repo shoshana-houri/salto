@@ -24,7 +24,10 @@ export type DeployDefWithDefault = types.PickyRequired<
   definitions.deploy.DeployApiDefinitions<AdditionalAction, ClientOptions>['instances'],
   'customizations'
 >
-export type InstanceDeployApiDefinitions = definitions.deploy.InstanceDeployApiDefinitions<AdditionalAction, ClientOptions>
+export type InstanceDeployApiDefinitions = definitions.deploy.InstanceDeployApiDefinitions<
+  AdditionalAction,
+  ClientOptions
+>
 export type DeployableRequestDefinitions = definitions.deploy.DeployableRequestDefinition<ClientOptions>
 export type InstanceFetchApiDefinitions = definitions.fetch.InstanceFetchApiDefinitions<ClientOptions>
 export type FetchApiDefinitions = definitions.fetch.FetchApiDefinitions<ClientOptions>

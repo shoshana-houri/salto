@@ -321,7 +321,7 @@ export const FETCH_DEFINITIONS: Record<string, InstanceFetchApiDefinitions> = {
               restrictions: {
                 user: _.get(item.value, 'restrictions.user.results'),
                 group: _.get(item.value, 'restrictions.group.results'),
-              }
+              },
             },
           }),
         },

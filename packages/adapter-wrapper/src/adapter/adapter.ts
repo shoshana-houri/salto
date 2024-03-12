@@ -41,11 +41,7 @@ import {
   references as referenceUtils,
   createChangeElementResolver,
 } from '@salto-io/adapter-components'
-import {
-  logDuration,
-  restoreChangeElement,
-  safeJsonStringify,
-} from '@salto-io/adapter-utils'
+import { logDuration, restoreChangeElement, safeJsonStringify } from '@salto-io/adapter-utils'
 import { logger } from '@salto-io/logging'
 import { collections, objects, types } from '@salto-io/lowerdash'
 import { Client } from '../client'
@@ -246,7 +242,8 @@ export class AdapterImpl<
       action: change.action,
       data: _.mapValues(change.data, (instance: InstanceElement) =>
         // TODON if can do in the infra in a "one-way" manner
-        deployment.overrideInstanceTypeForDeploy({ // TODON decide if want to avoid for swagger
+        deployment.overrideInstanceTypeForDeploy({
+          // TODON decide if want to avoid for swagger
           instance,
           // TODON not "symmetric" with fetch which gets the definitions and not the query
           defQuery: definitionUtils.queryWithDefault(this.definitions.fetch.instances),

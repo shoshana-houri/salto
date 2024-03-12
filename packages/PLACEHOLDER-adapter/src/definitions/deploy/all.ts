@@ -41,7 +41,10 @@ export const DEPLOY_DEFINITIONS: Record<string, InstanceDeployApiDefinitions> = 
           add: [
             {
               condition: {
-                custom: () => ({ change }) => shouldDeployIntervals(change),
+                custom:
+                  () =>
+                  ({ change }) =>
+                    shouldDeployIntervals(change),
               },
               request: {
                 endpoint: {
@@ -58,7 +61,10 @@ export const DEPLOY_DEFINITIONS: Record<string, InstanceDeployApiDefinitions> = 
           modify: [
             {
               condition: {
-                custom: () => ({ change }) => shouldDeployIntervals(change),
+                custom:
+                  () =>
+                  ({ change }) =>
+                    shouldDeployIntervals(change),
               },
               request: {
                 endpoint: {

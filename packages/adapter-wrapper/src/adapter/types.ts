@@ -13,7 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { AdapterOperations, ChangeValidator, ElemIdGetter, InstanceElement, ReadOnlyElementsSource } from '@salto-io/adapter-api'
+import {
+  AdapterOperations,
+  ChangeValidator,
+  ElemIdGetter,
+  InstanceElement,
+  ReadOnlyElementsSource,
+} from '@salto-io/adapter-api'
 import { definitions, filterUtils } from '@salto-io/adapter-components'
 import { types } from '@salto-io/lowerdash'
 import { Client } from '../client'
