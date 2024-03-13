@@ -14,26 +14,35 @@
  * limitations under the License.
  */
 import _ from 'lodash'
+import { Change, InstanceElement, Value, isModificationChange } from '@salto-io/adapter-api'
 import { createStandardItemDeployConfigs } from './utils'
 import { InstanceDeployApiDefinitions } from '../types'
 
+const getPermissionsDiff = (
+  change: Change<InstanceElement>,
+): { deletedPermissions: Value[]; addedPermissions: Value[] } => {
+  if (!isModificationChange(change)) {
+    return { deletedPermissions: [], addedPermissions: [] }
+  }
+  const { permissions: beforePermissions } = _.pickBy(change.data.before.value, 'permissions')
+  const { permissions: afterPermissions } = _.pickBy(change.data.after.value, 'permissions')
+  if (!Array.isArray(beforePermissions) || !Array.isArray(afterPermissions)) {
+    return { deletedPermissions: [], addedPermissions: [] }
+  }
+  return {
+    deletedPermissions: beforePermissions.filter(before => !afterPermissions.includes(before)),
+    addedPermissions: afterPermissions.filter(after => !beforePermissions.includes(after)),
+  }
+}
+
+const isSpaceChange = (change: Change<InstanceElement>): boolean => {
+  if (!isModificationChange(change)) {
+    return false
+  }
+  return !_.isEqual(_.omitBy(change.data.before.value, 'permissions'), _.omitBy(change.data.after.value, 'permissions'))
+}
+
 export const DEPLOY_DEFINITIONS: Record<string, InstanceDeployApiDefinitions> = {
-  space_permission: {
-    requestsByAction: {
-      customizations: {
-        remove: [
-          {
-            request: {
-              endpoint: {
-                path: '/wiki/rest/api/space/{_parent.0.key}/permission/{id}',
-                method: 'delete',
-              },
-            },
-          },
-        ],
-      },
-    },
-  },
   page: {
     requestsByAction: {
       customizations: {
@@ -84,6 +93,89 @@ export const DEPLOY_DEFINITIONS: Record<string, InstanceDeployApiDefinitions> = 
               },
               transformation: {
                 omit: ['restriction', 'version'],
+              },
+            },
+          },
+        ],
+      },
+    },
+  },
+  space: {
+    requestsByAction: {
+      customizations: {
+        add: [
+          {
+            request: {
+              endpoint: {
+                path: '/wiki/rest/api/space',
+                method: 'post',
+              },
+            },
+          },
+        ],
+        modify: [
+          {
+            condition: {
+              custom: () => isSpaceChange,
+            },
+            request: {
+              endpoint: {
+                path: '/wiki/rest/api/space/{key}',
+                method: 'put',
+              },
+            },
+          },
+          {
+            condition: {
+              custom:
+                () =>
+                ({ change }) => {
+                  const { deletedPermissions, addedPermissions } = getPermissionsDiff(change)
+                  return deletedPermissions.length > 0 || addedPermissions.length > 0
+                },
+            },
+            request: {
+              endpoint: {
+                path: '/wiki/rest/api/space/{key}/permission',
+                method: 'post',
+              },
+              transformation: {
+                adjust: async ({ context }) => {
+                  const { addedPermissions } = getPermissionsDiff(context.change)
+                  return { value: addedPermissions }
+                },
+              },
+            },
+          },
+          {
+            condition: {
+              custom:
+                () =>
+                ({ change }) => {
+                  const { deletedPermissions, addedPermissions } = getPermissionsDiff(change)
+                  return deletedPermissions.length > 0 || addedPermissions.length > 0
+                },
+            },
+            request: {
+              endpoint: {
+                path: '/wiki/rest/api/space/{key}/permission',
+                method: 'delete',
+              },
+              transformation: {
+                adjust: async ({ context }) => {
+                  const { deletedPermissions } = getPermissionsDiff(context.change)
+                  return { value: deletedPermissions }
+                },
+              },
+            },
+          },
+        ],
+        remove: [
+          {
+            request: {
+              endpoint: {
+                path: '/wiki/rest/api/space/{key}',
+                method: 'delete',
               },
             },
           },
