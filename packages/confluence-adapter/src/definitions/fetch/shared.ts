@@ -37,9 +37,6 @@ export const DEFAULT_FIELDS_TO_HIDE: Record<string, definitions.fetch.ElementFie
   updated_by_id: {
     hide: true,
   },
-  id: {
-    hide: true,
-  },
 }
 export const DEFAULT_FIELDS_TO_OMIT: Record<string, definitions.fetch.ElementFieldCustomization> = {
   _links: {

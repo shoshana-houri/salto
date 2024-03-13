@@ -16,7 +16,6 @@
 import _ from 'lodash'
 import { InstanceFetchApiDefinitions } from '../types'
 
-// TODO adjust
 export const FETCH_DEFINITIONS: Record<string, InstanceFetchApiDefinitions> = {
   group: {
     requests: [
@@ -93,7 +92,7 @@ export const FETCH_DEFINITIONS: Record<string, InstanceFetchApiDefinitions> = {
       directFetch: true,
       recurseInto: {
         permissions: {
-          typeName: 'space_permission',
+          typeName: 'permission',
           context: {
             args: {
               id: {
@@ -107,16 +106,18 @@ export const FETCH_DEFINITIONS: Record<string, InstanceFetchApiDefinitions> = {
     element: {
       topLevel: {
         isTopLevel: true,
+        path: {
+          pathParts: [
+            {
+              parts: [{ fieldName: 'name' }],
+            },
+            {
+              parts: [{ fieldName: 'name' }],
+            },
+          ],
+        },
       },
       fieldCustomizations: {
-        permissions: {
-          standalone: {
-            typeName: 'space_permission',
-            addParentAnnotation: true,
-            referenceFromParent: true,
-            nestPathUnderParent: true,
-          },
-        },
         properties: {
           standalone: {
             typeName: 'space_property',
@@ -128,7 +129,7 @@ export const FETCH_DEFINITIONS: Record<string, InstanceFetchApiDefinitions> = {
       },
     },
   },
-  space_permission: {
+  permission: {
     requests: [
       {
         endpoint: {
@@ -139,15 +140,6 @@ export const FETCH_DEFINITIONS: Record<string, InstanceFetchApiDefinitions> = {
         },
       },
     ],
-    element: {
-      topLevel: {
-        isTopLevel: true,
-        elemID: {
-          parts: [{ fieldName: 'principal.id' }, { fieldName: 'operation.key' }, { fieldName: 'operation.targetType' }],
-          extendsParent: true,
-        },
-      },
-    },
   },
   space_property: {
     requests: [
@@ -219,10 +211,14 @@ export const FETCH_DEFINITIONS: Record<string, InstanceFetchApiDefinitions> = {
           path: '/wiki/spaces/{spaceId.key}/pages/{id}',
         },
         elemID: {
-          parts: [{ fieldName: 'title' }, { fieldName: 'parentId', isReference: true }],
+          // Confluence does not allow pages with the same title in the same space
+          parts: [{ fieldName: 'spaceId', isReference: true }, { fieldName: 'title' }],
         },
         path: {
           pathParts: [
+            {
+              parts: [{ fieldName: 'spaceId', isReference: true }],
+            },
             {
               parts: [{ fieldName: 'title' }],
             },
@@ -231,7 +227,6 @@ export const FETCH_DEFINITIONS: Record<string, InstanceFetchApiDefinitions> = {
       },
     },
   },
-  // TODO SVH: rename?
   settings: {
     requests: [
       {

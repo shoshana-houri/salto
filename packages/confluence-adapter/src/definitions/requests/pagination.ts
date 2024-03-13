@@ -22,6 +22,9 @@ export const PAGINATION: Record<PaginationOptions, definitions.PaginationDefinit
   // replace with the correct pagination function(s)
   cursor: {
     funcCreator: () =>
-      cursorPagination({ pathChecker: fetchUtils.request.pagination.defaultPathChecker, paginationField: 'next' }),
+      cursorPagination({
+        pathChecker: fetchUtils.request.pagination.defaultPathChecker,
+        paginationField: '_links.next',
+      }),
   },
 }
