@@ -117,6 +117,10 @@
 			"path": "packages/serviceplaceholder-adapter"
 		},
 		{
+			"name": "google-workspace-adapter",
+			"path": "packages/google-workspace-adapter"
+		},
+		{
 			"name": "aws-utils",
 			"path": "packages/aws-utils"
 		}
