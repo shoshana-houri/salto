@@ -1,3 +1,3 @@
-# PLACEHOLDER adapter
+# Google Workspace adapter
 
-PLACEHOLDER read-only adapter for salto.io
+Google Workspace adapter for salto.io

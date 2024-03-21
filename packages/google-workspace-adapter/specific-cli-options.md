@@ -1,4 +1,4 @@
-# PLACEHOLDER CLI options
+# Google Workspace CLI options
 
 ## Non interactive Login Parameters
 
@@ -12,5 +12,5 @@ Supprted parameters are:
 ### Example
 
 ```
-salto account add PLACEHOLDER --login-parameters token=token
+salto account add google_workspace --login-parameters token=token
 ```
