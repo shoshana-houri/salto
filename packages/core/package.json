@@ -40,6 +40,7 @@
     "@salto-io/confluence-adapter": "0.3.57",
     "@salto-io/dag": "0.3.57",
     "@salto-io/dummy-adapter": "0.3.57",
+    "@salto-io/entra-id-adapter": "0.3.57",
     "@salto-io/file": "0.3.57",
     "@salto-io/google-workspace-adapter": "0.3.57",
     "@salto-io/intercom-adapter": "0.3.57",

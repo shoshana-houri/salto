@@ -41,6 +41,10 @@
       "path": "packages/e2e-credentials-store",
     },
     {
+      "name": "entra-id-adapter",
+      "path": "packages/entra-id-adapter",
+    },
+    {
       "name": "file",
       "path": "packages/file",
     },

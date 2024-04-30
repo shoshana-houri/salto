@@ -285,7 +285,7 @@ export const hideAndOmitFields = <Options extends FetchApiDefinitionsOptions>({
     const { element: elementDef } = defQuery.query(typeName) ?? {}
 
     Object.entries(elementDef?.fieldCustomizations ?? {}).forEach(([fieldName, customization]) => {
-      const field = type.fields[fieldName]
+      const field = type.fields[fieldName] // here
       if (field === undefined) {
         log.debug('field %s.%s is undefined, not applying customizations', typeName, fieldName)
         return

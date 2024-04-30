@@ -31,6 +31,7 @@
     { "path": "../serviceplaceholder-adapter" },
     { "path": "../google-workspace-adapter" },
     { "path": "../confluence-adapter" },
+    { "path": "../entra-id-adapter"},
     { "path": "../parser" }
   ]
 }
