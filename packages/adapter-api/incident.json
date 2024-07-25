@@ -7,6 +7,212 @@
       "nameParts": ["Update_Opportunity_Stage"]
     },
     "annotations": {
+      "_generated_dependencies": [
+        {
+          "reference": {
+            "elemID": {
+              "adapter": "salesforce",
+              "typeName": "AuraDefinitionBundle",
+              "idType": "instance",
+              "nameParts": ["OpenSObject"],
+              "fullName": "salesforce.AuraDefinitionBundle.instance.OpenSObject"
+            },
+            "_salto_class": "ReferenceExpression"
+          }
+        },
+        {
+          "reference": {
+            "elemID": {
+              "adapter": "salesforce",
+              "typeName": "Baton__c",
+              "idType": "field",
+              "nameParts": ["AE_Status__c"],
+              "fullName": "salesforce.Baton__c.field.AE_Status__c"
+            },
+            "_salto_class": "ReferenceExpression"
+          }
+        },
+        {
+          "reference": {
+            "elemID": {
+              "adapter": "salesforce",
+              "typeName": "Opportunity",
+              "idType": "field",
+              "nameParts": ["Auto_Renew__c"],
+              "fullName": "salesforce.Opportunity.field.Auto_Renew__c"
+            },
+            "_salto_class": "ReferenceExpression"
+          }
+        },
+        {
+          "reference": {
+            "elemID": {
+              "adapter": "salesforce",
+              "typeName": "Opportunity",
+              "idType": "field",
+              "nameParts": ["Contract_Sign_Date__c"],
+              "fullName": "salesforce.Opportunity.field.Contract_Sign_Date__c"
+            },
+            "_salto_class": "ReferenceExpression"
+          }
+        },
+        {
+          "reference": {
+            "elemID": {
+              "adapter": "salesforce",
+              "typeName": "Opportunity",
+              "idType": "field",
+              "nameParts": ["Ironclad_Workflow__c"],
+              "fullName": "salesforce.Opportunity.field.Ironclad_Workflow__c"
+            },
+            "_salto_class": "ReferenceExpression"
+          }
+        },
+        {
+          "reference": {
+            "elemID": {
+              "adapter": "salesforce",
+              "typeName": "Opportunity",
+              "idType": "field",
+              "nameParts": ["Number_of_Contact_Roles__c"],
+              "fullName": "salesforce.Opportunity.field.Number_of_Contact_Roles__c"
+            },
+            "_salto_class": "ReferenceExpression"
+          }
+        },
+        {
+          "reference": {
+            "elemID": {
+              "adapter": "salesforce",
+              "typeName": "Opportunity",
+              "idType": "field",
+              "nameParts": ["Number_of_Decision_Makers__c"],
+              "fullName": "salesforce.Opportunity.field.Number_of_Decision_Makers__c"
+            },
+            "_salto_class": "ReferenceExpression"
+          }
+        },
+        {
+          "reference": {
+            "elemID": {
+              "adapter": "salesforce",
+              "typeName": "Opportunity",
+              "idType": "field",
+              "nameParts": ["Number_of_Initial_Communicators__c"],
+              "fullName": "salesforce.Opportunity.field.Number_of_Initial_Communicators__c"
+            },
+            "_salto_class": "ReferenceExpression"
+          }
+        },
+        {
+          "reference": {
+            "elemID": {
+              "adapter": "salesforce",
+              "typeName": "Opportunity",
+              "idType": "field",
+              "nameParts": ["Number_of_New_Segment__c"],
+              "fullName": "salesforce.Opportunity.field.Number_of_New_Segment__c"
+            },
+            "_salto_class": "ReferenceExpression"
+          }
+        },
+        {
+          "reference": {
+            "elemID": {
+              "adapter": "salesforce",
+              "typeName": "Opportunity",
+              "idType": "field",
+              "nameParts": ["Number_of_S2I__c"],
+              "fullName": "salesforce.Opportunity.field.Number_of_S2I__c"
+            },
+            "_salto_class": "ReferenceExpression"
+          }
+        },
+        {
+          "reference": {
+            "elemID": {
+              "adapter": "salesforce",
+              "typeName": "Opportunity",
+              "idType": "field",
+              "nameParts": ["Opportunity_Category__c"],
+              "fullName": "salesforce.Opportunity.field.Opportunity_Category__c"
+            },
+            "_salto_class": "ReferenceExpression"
+          }
+        },
+        {
+          "reference": {
+            "elemID": {
+              "adapter": "salesforce",
+              "typeName": "Opportunity",
+              "idType": "field",
+              "nameParts": ["Record_Type_Name__c"],
+              "fullName": "salesforce.Opportunity.field.Record_Type_Name__c"
+            },
+            "_salto_class": "ReferenceExpression"
+          }
+        },
+        {
+          "reference": {
+            "elemID": {
+              "adapter": "salesforce",
+              "typeName": "Opportunity",
+              "idType": "field",
+              "nameParts": ["SBQQ__PrimaryQuote__c"],
+              "fullName": "salesforce.Opportunity.field.SBQQ__PrimaryQuote__c"
+            },
+            "_salto_class": "ReferenceExpression"
+          }
+        },
+        {
+          "reference": {
+            "elemID": {
+              "adapter": "salesforce",
+              "typeName": "Opportunity",
+              "idType": "field",
+              "nameParts": ["Skip_Contract_VR__c"],
+              "fullName": "salesforce.Opportunity.field.Skip_Contract_VR__c"
+            },
+            "_salto_class": "ReferenceExpression"
+          }
+        },
+        {
+          "reference": {
+            "elemID": {
+              "adapter": "salesforce",
+              "typeName": "Opportunity",
+              "idType": "field",
+              "nameParts": ["Skip_Handoff_VR__c"],
+              "fullName": "salesforce.Opportunity.field.Skip_Handoff_VR__c"
+            },
+            "_salto_class": "ReferenceExpression"
+          }
+        },
+        {
+          "reference": {
+            "elemID": {
+              "adapter": "salesforce",
+              "typeName": "SBQQ__Quote__c",
+              "idType": "field",
+              "nameParts": ["SBQQ__Status__c"],
+              "fullName": "salesforce.SBQQ__Quote__c.field.SBQQ__Status__c"
+            },
+            "_salto_class": "ReferenceExpression"
+          }
+        },
+        {
+          "reference": {
+            "elemID": {
+              "adapter": "salesforce",
+              "typeName": "ironclad__Ironclad_Workflow__c",
+              "idType": "type",
+              "nameParts": [],
+              "fullName": "salesforce.ironclad__Ironclad_Workflow__c"
+            },
+            "_salto_class": "ReferenceExpression"
+          }
+        }
+      ],
       "_alias": "Update Opportunity Stage"
     },
     "annotationRefTypes": {},
@@ -540,7 +746,7 @@
         {
           "name": "Are_there_any_missing_fields",
           "label": "Are there any missing fields?",
-          "locationX": 4989,
+          "locationX": 5253,
           "locationY": 890,
           "defaultConnector": {
             "targetReference": "Assign_Account_values"
@@ -579,7 +785,7 @@
         {
           "name": "Check_if_quote_exist",
           "label": "Check if quote exist",
-          "locationX": 2206,
+          "locationX": 2404,
           "locationY": 674,
           "defaultConnector": {
             "targetReference": "Quote_message"
@@ -606,16 +812,59 @@
                 }
               ],
               "connector": {
-                "targetReference": "Assign_Proposal_stage"
+                "targetReference": "Get_competition_records"
               },
               "label": "exist"
             }
           ]
         },
         {
+          "name": "Check_if_the_opp_is_competitive",
+          "label": "Check if the opp is competitive",
+          "locationX": 2206,
+          "locationY": 1106,
+          "defaultConnector": {
+            "targetReference": "Assign_Proposal_stage"
+          },
+          "defaultConnectorLabel": "Default Outcome",
+          "rules": [
+            {
+              "name": "Create_new_competitor",
+              "conditionLogic": "1 AND (2 OR 3)",
+              "conditions": [
+                {
+                  "leftValueReference": "Get_competition_records",
+                  "operator": "IsNull",
+                  "rightValue": {
+                    "booleanValue": true
+                  }
+                },
+                {
+                  "leftValueReference": "Is_this_opportunity_Competitive",
+                  "operator": "EqualTo",
+                  "rightValue": {
+                    "stringValue": "Yes"
+                  }
+                },
+                {
+                  "leftValueReference": "Get_Opportunity.Is_This_Opportunity_Competitive__c",
+                  "operator": "EqualTo",
+                  "rightValue": {
+                    "stringValue": "Yes"
+                  }
+                }
+              ],
+              "connector": {
+                "targetReference": "Update_opp_competitve"
+              },
+              "label": "Create new competitor"
+            }
+          ]
+        },
+        {
           "name": "Check_IronClad1",
           "label": "Check IronClad",
-          "locationX": 5374,
+          "locationX": 5638,
           "locationY": 1814,
           "defaultConnector": {
             "targetReference": "Implementation_handoff_Completed"
@@ -655,7 +904,7 @@
         {
           "name": "Check_primary_quote_status",
           "label": "Check primary quote status?",
-          "locationX": 3922,
+          "locationX": 4186,
           "locationY": 674,
           "defaultConnector": {
             "targetReference": "Quote_approve_message"
@@ -722,7 +971,7 @@
         {
           "name": "Contract_Sign_Date_is_Missing",
           "label": "Contract Sign Date is Missing?",
-          "locationX": 5187,
+          "locationX": 5451,
           "locationY": 1490,
           "defaultConnector": {
             "targetReference": "Is_Contract_Sign_Date_Valid"
@@ -808,7 +1057,7 @@
           "description": "For AE and BDR",
           "name": "Copy_1_of_Has_Contact_Roles",
           "label": "Has Contact Roles?",
-          "locationX": 2008,
+          "locationX": 2107,
           "locationY": 566,
           "defaultConnector": {
             "targetReference": "Check_if_quote_exist"
@@ -867,7 +1116,7 @@
           "description": "For AE or BDR",
           "name": "Copy_1_of_Has_decision_maker",
           "label": "Missing Contact Roles?",
-          "locationX": 4818,
+          "locationX": 5082,
           "locationY": 566,
           "defaultConnector": {
             "targetReference": "Empty_billing_address_fields"
@@ -940,7 +1189,7 @@
           "description": "For AE and BDR",
           "name": "Copy_2_of_Has_Contact_Roles",
           "label": "Has Contact Roles?",
-          "locationX": 2734,
+          "locationX": 2998,
           "locationY": 566,
           "defaultConnector": {
             "targetReference": "Assign_Negotiate_stage"
@@ -1032,7 +1281,7 @@
         {
           "name": "Empty_billing_address_fields",
           "label": "Empty billing address fields?",
-          "locationX": 5187,
+          "locationX": 5451,
           "locationY": 674,
           "defaultConnector": {
             "targetReference": "Contract_Sign_Date_is_Missing"
@@ -1093,7 +1342,7 @@
           "description": "For AE or BDR",
           "name": "Has_decision_maker2",
           "label": "Has Contact Roles?",
-          "locationX": 3592,
+          "locationX": 3856,
           "locationY": 566,
           "defaultConnector": {
             "targetReference": "Check_primary_quote_status"
@@ -1164,7 +1413,7 @@
         {
           "name": "Implementation_handoff_Completed",
           "label": "Implementation handoff Completed?",
-          "locationX": 5374,
+          "locationX": 5638,
           "locationY": 2114,
           "defaultConnector": {
             "targetReference": "Move_to_Implement_stage"
@@ -1269,7 +1518,7 @@
         {
           "name": "Is_Contract_Sign_Date_Valid",
           "label": "Is Contract Sign Date Valid",
-          "locationX": 5660,
+          "locationX": 5924,
           "locationY": 1598,
           "defaultConnector": {
             "targetReference": "Contact_Sign_Date_Not_Valid"
@@ -1298,7 +1547,7 @@
         {
           "name": "Move_to_Implement_stage",
           "label": "Move to Implement stage?",
-          "locationX": 5374,
+          "locationX": 5638,
           "locationY": 2414,
           "defaultConnector": {
             "targetReference": "Ironclad_validation"
@@ -1388,7 +1637,7 @@
         {
           "name": "Need_to_create_addtl_role",
           "label": "Need to create addtl role?",
-          "locationX": 3262,
+          "locationX": 3526,
           "locationY": 1598,
           "defaultConnector": {
             "isGoTo": true,
@@ -1422,7 +1671,7 @@
         {
           "name": "Need_to_Create_decision_maker",
           "label": "Need to Create decision maker?",
-          "locationX": 3262,
+          "locationX": 3526,
           "locationY": 782,
           "defaultConnector": {
             "targetReference": "Need_to_Create_initial_communicator2"
@@ -1488,7 +1737,7 @@
         {
           "name": "Need_to_Create_initial_communicator2",
           "label": "Need to Create initial communicator?",
-          "locationX": 3262,
+          "locationX": 3526,
           "locationY": 1190,
           "defaultConnector": {
             "targetReference": "Need_to_create_addtl_role"
@@ -1521,7 +1770,7 @@
         {
           "name": "Next_stage_based_on_current_stage",
           "label": "Next stage based on current stage",
-          "locationX": 3130,
+          "locationX": 3262,
           "locationY": 458,
           "defaultConnector": {
             "targetReference": "Close_opp"
@@ -1861,9 +2110,50 @@
       "processType": "Flow",
       "recordLookups": [
         {
+          "name": "Get_competition_records",
+          "label": "Get competition records",
+          "locationX": 2206,
+          "locationY": 782,
+          "assignNullValuesIfNoRecordsFound": false,
+          "connector": {
+            "targetReference": "Competition_screen"
+          },
+          "filterLogic": "and",
+          "filters": [
+            {
+              "field": {
+                "elemID": {
+                  "adapter": "salesforce",
+                  "typeName": "Competitor__c",
+                  "idType": "field",
+                  "nameParts": ["Opportunity__c"],
+                  "fullName": "salesforce.Competitor__c.field.Opportunity__c"
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "operator": "EqualTo",
+              "value": {
+                "elementReference": "recordId"
+              }
+            }
+          ],
+          "getFirstRecordOnly": false,
+          "object": {
+            "elemID": {
+              "adapter": "salesforce",
+              "typeName": "Competitor__c",
+              "idType": "type",
+              "nameParts": [],
+              "fullName": "salesforce.Competitor__c"
+            },
+            "_salto_class": "ReferenceExpression"
+          },
+          "storeOutputAutomatically": true
+        },
+        {
           "name": "Get_Implementation_handoff",
           "label": "Get Implementation handoff",
-          "locationX": 5374,
+          "locationX": 5638,
           "locationY": 1706,
           "assignNullValuesIfNoRecordsFound": false,
           "connector": {
@@ -1904,7 +2194,7 @@
         {
           "name": "Get_Opportunity",
           "label": "Get Opportunity",
-          "locationX": 3130,
+          "locationX": 3262,
           "locationY": 134,
           "assignNullValuesIfNoRecordsFound": false,
           "connector": {
@@ -3300,7 +3590,7 @@
         }
       ],
       "start": {
-        "locationX": 3004,
+        "locationX": 3136,
         "locationY": 0,
         "connector": {
           "targetReference": "Get_Opportunity"
@@ -3309,9 +3599,34 @@
       "status": "Active",
       "subflows": [
         {
+          "name": "Create_new_competition_record",
+          "label": "Create new competition record",
+          "locationX": 2074,
+          "locationY": 1430,
+          "flowName": {
+            "elemID": {
+              "adapter": "salesforce",
+              "typeName": "Flow",
+              "idType": "instance",
+              "nameParts": ["New_Engagement_Opportunity"],
+              "fullName": "salesforce.Flow.instance.New_Engagement_Opportunity"
+            },
+            "_salto_class": "ReferenceExpression"
+          },
+          "inputAssignments": [
+            {
+              "name": "recordId",
+              "value": {
+                "elementReference": "Get_Opportunity"
+              }
+            }
+          ],
+          "storeOutputAutomatically": true
+        },
+        {
           "name": "Create_new_Quote",
           "label": "Create new Quote",
-          "locationX": 2338,
+          "locationX": 2602,
           "locationY": 890,
           "flowName": {
             "elemID": {
@@ -3335,7 +3650,7 @@
         {
           "name": "Create_renewal_Quote",
           "label": "Create renewal Quote",
-          "locationX": 3922,
+          "locationX": 4186,
           "locationY": 890,
           "flowName": {
             "elemID": {
@@ -3510,6 +3825,30 @@
               "idType": "type",
               "nameParts": [],
               "fullName": "salesforce.Account"
+            },
+            "_salto_class": "ReferenceExpression"
+          }
+        },
+        {
+          "name": "Is_competitive_opp",
+          "dataType": "Picklist",
+          "picklistField": {
+            "elemID": {
+              "adapter": "salesforce",
+              "typeName": "Opportunity",
+              "idType": "field",
+              "nameParts": ["Is_This_Opportunity_Competitive__c"],
+              "fullName": "salesforce.Opportunity.field.Is_This_Opportunity_Competitive__c"
+            },
+            "_salto_class": "ReferenceExpression"
+          },
+          "picklistObject": {
+            "elemID": {
+              "adapter": "salesforce",
+              "typeName": "Opportunity",
+              "idType": "type",
+              "nameParts": [],
+              "fullName": "salesforce.Opportunity"
             },
             "_salto_class": "ReferenceExpression"
           }
@@ -3711,7 +4050,7 @@
         {
           "name": "Open_Opportunity",
           "label": "Open Opportunity",
-          "locationX": 6210,
+          "locationX": 6474,
           "locationY": 674,
           "actionName": "c:OpenSObject",
           "actionType": "component",
@@ -3731,7 +4070,7 @@
         {
           "name": "Open_Opportunity1",
           "label": "Open Opportunity",
-          "locationX": 5506,
+          "locationX": 5770,
           "locationY": 2630,
           "actionName": "c:OpenSObject",
           "actionType": "component",
@@ -3751,7 +4090,7 @@
         {
           "name": "Open_Primary_quote",
           "label": "Open Primary quote",
-          "locationX": 4186,
+          "locationX": 4450,
           "locationY": 890,
           "actionName": "c:OpenSObject",
           "actionType": "component",
@@ -3773,7 +4112,7 @@
         {
           "name": "Copy_1_of_Copy_1_of_Create_contact_role",
           "label": "Copy 1 of Copy 1 of Create contact role",
-          "locationX": 3130,
+          "locationX": 3394,
           "locationY": 1814,
           "connector": {
             "isGoTo": true,
@@ -3784,7 +4123,7 @@
         {
           "name": "Copy_1_of_Create_contact_role",
           "label": "Copy 1 of Create contact role",
-          "locationX": 3130,
+          "locationX": 3394,
           "locationY": 1406,
           "connector": {
             "targetReference": "Need_to_create_addtl_role"
@@ -3794,7 +4133,7 @@
         {
           "name": "Create_contact_role",
           "label": "Create contact role",
-          "locationX": 3130,
+          "locationX": 3394,
           "locationY": 998,
           "connector": {
             "targetReference": "Need_to_Create_initial_communicator2"
