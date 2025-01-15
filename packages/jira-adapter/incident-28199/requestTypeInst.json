@@ -1,0 +1,1118 @@
+[
+  {
+    "elemID": {
+      "adapter": "jira",
+      "typeName": "RequestType",
+      "idType": "instance",
+      "nameParts": ["Platform_Configuration_Change_PO@ssu"]
+    },
+    "annotations": {
+      "_parent": [
+        {
+          "elemID": {
+            "adapter": "jira",
+            "typeName": "Project",
+            "idType": "instance",
+            "nameParts": ["Platform_Operations@s"]
+          },
+          "_salto_class": "ReferenceExpression"
+        }
+      ],
+      "_alias": "Platform Operations:Platform Configuration Change"
+    },
+    "annotationRefTypes": {},
+    "path": [
+      "jira",
+      "Records",
+      "Project",
+      "Service Desk",
+      "Platform_Operations",
+      "requestTypes",
+      "Platform_Configuration_Change_PO"
+    ],
+    "value": {
+      "requestForm": {
+        "issueLayoutConfig": {
+          "items": [
+            {
+              "type": "FIELD",
+              "sectionType": "REQUEST",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Summary__string"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": false,
+                "global": true,
+                "required": true
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "REQUEST",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Affected_services__service_entity_field_cftype__c@suubbbuu"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": true,
+                "global": true,
+                "description": "Link services from the service registry to an issue.",
+                "required": false
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "REQUEST",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Due_date__date@suu"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": false,
+                "global": true,
+                "required": true,
+                "properties": [
+                  {
+                    "key": "jsd.field.displayName",
+                    "value": "Request Needed By"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "REQUEST",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Description__string"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": false,
+                "global": true,
+                "required": true
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "REQUEST",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Request_Impact__select__c@suuuu"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": true,
+                "global": true,
+                "description": "",
+                "required": true
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "REQUEST",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Request_Urgency__select__c@suuuu"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": true,
+                "global": true,
+                "description": "",
+                "required": true
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "REQUEST",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["VIP_Customer__select__c@suuuu"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": true,
+                "global": true,
+                "description": "Used on the Platform Operations JSM project and syncs with the Salesforce Connector.",
+                "required": true
+              }
+            }
+          ]
+        }
+      },
+      "issueView": {
+        "issueLayoutConfig": {
+          "items": [
+            {
+              "type": "PANEL",
+              "sectionType": "PRIMARY",
+              "key": "SLA_PANEL",
+              "data": {
+                "name": "SLAs"
+              }
+            },
+            {
+              "type": "PANEL",
+              "sectionType": "PRIMARY",
+              "key": "CUSTOMER_CONTEXT",
+              "data": {
+                "name": "Customer"
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "PRIMARY",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Request_Type__vp_origin__c@suubuu"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": true,
+                "global": true,
+                "description": "Holds information about which Service Desk was used to create a ticket. This custom field is created programmatically and must not be modified.",
+                "required": false
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "PRIMARY",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Priority__select__c"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": true,
+                "global": true,
+                "description": "Jira Service Management priority field",
+                "required": false
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "PRIMARY",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Source__select__c"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": true,
+                "global": true,
+                "description": "Captures the reporting source for this issue",
+                "required": false
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "PRIMARY",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Reporter__user"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": false,
+                "global": true,
+                "required": false
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "PRIMARY",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Request_participants__sd_request_participants__c@suubbuu"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": true,
+                "global": true,
+                "description": "Stores the users that are participants in service project customer portal requests. This custom field is created programmatically and required by service project.",
+                "required": false
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "PRIMARY",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Affected_Customer__textfield__c@suuuu"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": true,
+                "global": true,
+                "description": "For use on the Platform Operations JSM project. Displays the account name/number from Salesforce Incident type IT Problems. Mapped with Salesforce Connector.",
+                "required": false
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "PRIMARY",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Affected_Product__select__c@suuuu"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": true,
+                "global": true,
+                "description": "Used on the Platform Operations JSM project. Syncs with Product Line in Salesforce through the Salesforce Connnector app.",
+                "required": false
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "PRIMARY",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Assignee__user"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": false,
+                "global": true,
+                "required": false
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "PRIMARY",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Team__atlassian_team__c@uubuu"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": true,
+                "global": true,
+                "description": "Associates a team to an issue. You can use this field to search and filter issues by team.",
+                "required": false
+              }
+            },
+            {
+              "type": "PANEL",
+              "sectionType": "PRIMARY",
+              "key": "KNOWLEDGE_BASE",
+              "data": {
+                "name": "Knowledge Base"
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "SECONDARY",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Request_Needed_By__datetime__c@ssuuuu"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": true,
+                "global": true,
+                "description": "Select the date/time the request is need by.",
+                "required": false
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "SECONDARY",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Labels__array"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": false,
+                "global": true,
+                "required": false
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "SECONDARY",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Approvers__multiuserpicker__c"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": true,
+                "global": true,
+                "description": "Contains users needed for approval. This custom field was created by Jira.",
+                "required": false
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "SECONDARY",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Pending_reason__select__c@suuuu"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": true,
+                "global": true,
+                "description": "Specify the reason for moving the issue to the Pending status",
+                "required": false
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "SECONDARY",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Resource_Name_s___textfield__c@sjkuuuu"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": true,
+                "global": true,
+                "description": "The name of the resource(s) access is needed to or to be created.",
+                "required": false
+              }
+            },
+            {
+              "type": "PANEL",
+              "sectionType": "SECONDARY",
+              "key": "devSummary",
+              "data": {
+                "name": "Development"
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "SECONDARY",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Needed_By__datetime__c@suuuu"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": true,
+                "global": true,
+                "description": "",
+                "required": false
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "SECONDARY",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Org_Code_s___textfield__c@sjkuuuu"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": true,
+                "global": true,
+                "description": "",
+                "required": false
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "SECONDARY",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Database_Name__textfield__c@suuuu"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": true,
+                "global": true,
+                "description": "",
+                "required": false
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "SECONDARY",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Environment__select__c"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": true,
+                "global": true,
+                "description": "",
+                "required": false
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "SECONDARY",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Resource_Type__select__c@suuuu"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": true,
+                "global": true,
+                "description": "",
+                "required": false
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "SECONDARY",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Access_Level__select__c@suuuu"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": true,
+                "global": true,
+                "description": "",
+                "required": false
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "SECONDARY",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Regulatory_Compliance__select__c@suuuu"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": true,
+                "global": true,
+                "description": "",
+                "required": false
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "SECONDARY",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Is_this_a_Software_Release_Interface_Change___select__c@ssssdsauuuu"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": true,
+                "global": true,
+                "description": "",
+                "required": false
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "SECONDARY",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["TherapyO_Database_Target__select__c@ssuuuu"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": true,
+                "global": true,
+                "description": "",
+                "required": false
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "SECONDARY",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["ITSD_Approvers__multiuserpicker__c@suuuu"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": true,
+                "global": true,
+                "description": "",
+                "required": false
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "SECONDARY",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Business_Unit__select__c@suuuu"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": true,
+                "global": true,
+                "description": "",
+                "required": false
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "SECONDARY",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Planned_end__datetime__c@suuuu"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": true,
+                "global": true,
+                "description": "Enter when this issue is planned to end.",
+                "required": false
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "SECONDARY",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Incorrectly_Triaged___select__c@sauuuu"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": true,
+                "global": true,
+                "description": "Was the incident incorrectly triaged (i.e., missing/inaccurate/incorrect information) by Level I.",
+                "required": false
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "SECONDARY",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Can_the_job_be_completed_early___select__c@sssssauuuu"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": true,
+                "global": true,
+                "description": "",
+                "required": false
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "SECONDARY",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Can_the_job_be_completed_during_business_hours___select__c@sssssssauuuu"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": true,
+                "global": true,
+                "description": "Note: After business hours begins at 9PM EST",
+                "required": false
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "SECONDARY",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Parent"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": false,
+                "global": true,
+                "required": false
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "CONTENT",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Pre_Test_plan__textarea__c@bsuuuu"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": true,
+                "global": true,
+                "description": "",
+                "required": false
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "CONTENT",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Backout_plan__textarea__c@suuuu"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": true,
+                "global": true,
+                "description": "",
+                "required": false
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "CONTENT",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Implementation_plan__textarea__c@suuuu"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": true,
+                "global": true,
+                "description": "",
+                "required": false
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "CONTENT",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Post_Implementation_Test_Plan__textarea__c@sssuuuu"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": true,
+                "global": true,
+                "description": "",
+                "required": false
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "CONTENT",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["TherapyO_Org_Code__textarea__c@ssuuuu"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": true,
+                "global": true,
+                "description": "",
+                "required": false
+              }
+            }
+          ]
+        }
+      },
+      "name": "Platform Configuration Change",
+      "description": "Use this form to request a configuration/feature change to a platform instance",
+      "helpText": "",
+      "issueTypeId": {
+        "elemID": {
+          "adapter": "jira",
+          "typeName": "IssueType",
+          "idType": "instance",
+          "nameParts": ["Service_request@s"]
+        },
+        "_salto_class": "ReferenceExpression"
+      },
+      "workflowStatuses": [
+        {
+          "id": {
+            "elemID": {
+              "adapter": "jira",
+              "typeName": "Status",
+              "idType": "instance",
+              "nameParts": ["in_progress@s"]
+            },
+            "_salto_class": "ReferenceExpression"
+          },
+          "custom": ""
+        },
+        {
+          "id": {
+            "elemID": {
+              "adapter": "jira",
+              "typeName": "Status",
+              "idType": "instance",
+              "nameParts": ["canceled"]
+            },
+            "_salto_class": "ReferenceExpression"
+          },
+          "custom": ""
+        },
+        {
+          "id": {
+            "elemID": {
+              "adapter": "jira",
+              "typeName": "Status",
+              "idType": "instance",
+              "nameParts": ["closed"]
+            },
+            "_salto_class": "ReferenceExpression"
+          },
+          "custom": ""
+        },
+        {
+          "id": {
+            "elemID": {
+              "adapter": "jira",
+              "typeName": "Status",
+              "idType": "instance",
+              "nameParts": ["open"]
+            },
+            "_salto_class": "ReferenceExpression"
+          },
+          "custom": ""
+        },
+        {
+          "id": {
+            "elemID": {
+              "adapter": "jira",
+              "typeName": "Status",
+              "idType": "instance",
+              "nameParts": ["awaiting_3rd_party@s"]
+            },
+            "_salto_class": "ReferenceExpression"
+          },
+          "custom": ""
+        },
+        {
+          "id": {
+            "elemID": {
+              "adapter": "jira",
+              "typeName": "Status",
+              "idType": "instance",
+              "nameParts": ["awaiting_response@s"]
+            },
+            "_salto_class": "ReferenceExpression"
+          },
+          "custom": ""
+        },
+        {
+          "id": {
+            "elemID": {
+              "adapter": "jira",
+              "typeName": "Status",
+              "idType": "instance",
+              "nameParts": ["awaiting_approval@s"]
+            },
+            "_salto_class": "ReferenceExpression"
+          },
+          "custom": ""
+        },
+        {
+          "id": {
+            "elemID": {
+              "adapter": "jira",
+              "typeName": "Status",
+              "idType": "instance",
+              "nameParts": ["denied"]
+            },
+            "_salto_class": "ReferenceExpression"
+          },
+          "custom": ""
+        },
+        {
+          "id": {
+            "elemID": {
+              "adapter": "jira",
+              "typeName": "Status",
+              "idType": "instance",
+              "nameParts": ["fulfilled"]
+            },
+            "_salto_class": "ReferenceExpression"
+          },
+          "custom": ""
+        },
+        {
+          "id": {
+            "elemID": {
+              "adapter": "jira",
+              "typeName": "Status",
+              "idType": "instance",
+              "nameParts": ["manager_approved@s"]
+            },
+            "_salto_class": "ReferenceExpression"
+          },
+          "custom": ""
+        },
+        {
+          "id": {
+            "elemID": {
+              "adapter": "jira",
+              "typeName": "Status",
+              "idType": "instance",
+              "nameParts": ["pending_change_control@s"]
+            },
+            "_salto_class": "ReferenceExpression"
+          },
+          "custom": ""
+        },
+        {
+          "id": {
+            "elemID": {
+              "adapter": "jira",
+              "typeName": "Status",
+              "idType": "instance",
+              "nameParts": ["change_approved@s"]
+            },
+            "_salto_class": "ReferenceExpression"
+          },
+          "custom": ""
+        },
+        {
+          "id": {
+            "elemID": {
+              "adapter": "jira",
+              "typeName": "Status",
+              "idType": "instance",
+              "nameParts": ["awaiting_itsd_approval@s"]
+            },
+            "_salto_class": "ReferenceExpression"
+          },
+          "custom": ""
+        },
+        {
+          "id": {
+            "elemID": {
+              "adapter": "jira",
+              "typeName": "Status",
+              "idType": "instance",
+              "nameParts": ["awaiting_script_approval@s"]
+            },
+            "_salto_class": "ReferenceExpression"
+          },
+          "custom": ""
+        },
+        {
+          "id": {
+            "elemID": {
+              "adapter": "jira",
+              "typeName": "Status",
+              "idType": "instance",
+              "nameParts": ["awaiting_db_access_approval@s"]
+            },
+            "_salto_class": "ReferenceExpression"
+          },
+          "custom": ""
+        },
+        {
+          "id": {
+            "elemID": {
+              "adapter": "jira",
+              "typeName": "Status",
+              "idType": "instance",
+              "nameParts": ["execution_scheduled@s"]
+            },
+            "_salto_class": "ReferenceExpression"
+          },
+          "custom": ""
+        },
+        {
+          "id": {
+            "elemID": {
+              "adapter": "jira",
+              "typeName": "Status",
+              "idType": "instance",
+              "nameParts": ["escalated"]
+            },
+            "_salto_class": "ReferenceExpression"
+          },
+          "custom": ""
+        },
+        {
+          "id": {
+            "elemID": {
+              "adapter": "jira",
+              "typeName": "Status",
+              "idType": "instance",
+              "nameParts": ["approved_to_develop@s"]
+            },
+            "_salto_class": "ReferenceExpression"
+          },
+          "custom": ""
+        }
+      ],
+      "avatarId": "10580"
+    },
+    "refType": {
+      "elemID": {
+        "adapter": "jira",
+        "typeName": "RequestType",
+        "idType": "type",
+        "nameParts": []
+      },
+      "_salto_class": "TypeReference"
+    },
+    "_salto_class": "InstanceElement"
+  }
+]
