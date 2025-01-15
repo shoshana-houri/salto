@@ -21,15 +21,6 @@
       "_alias": "Platform Operations:Platform Configuration Change"
     },
     "annotationRefTypes": {},
-    "path": [
-      "jira",
-      "Records",
-      "Project",
-      "Service Desk",
-      "Platform_Operations",
-      "requestTypes",
-      "Platform_Configuration_Change_PO"
-    ],
     "value": {
       "requestForm": {
         "issueLayoutConfig": {
@@ -50,6 +41,25 @@
                 "custom": false,
                 "global": true,
                 "required": true
+              }
+            },
+            {
+              "type": "FIELD",
+              "sectionType": "REQUEST",
+              "key": {
+                "elemID": {
+                  "adapter": "jira",
+                  "typeName": "Field",
+                  "idType": "instance",
+                  "nameParts": ["Affected_Product__select__c@suuuu"]
+                },
+                "_salto_class": "ReferenceExpression"
+              },
+              "data": {
+                "custom": true,
+                "global": true,
+                "description": "Used on the Platform Operations JSM project. Syncs with Product Line in Salesforce through the Salesforce Connnector app.",
+                "required": false
               }
             },
             {
@@ -302,25 +312,6 @@
                 "custom": true,
                 "global": true,
                 "description": "For use on the Platform Operations JSM project. Displays the account name/number from Salesforce Incident type IT Problems. Mapped with Salesforce Connector.",
-                "required": false
-              }
-            },
-            {
-              "type": "FIELD",
-              "sectionType": "PRIMARY",
-              "key": {
-                "elemID": {
-                  "adapter": "jira",
-                  "typeName": "Field",
-                  "idType": "instance",
-                  "nameParts": ["Affected_Product__select__c@suuuu"]
-                },
-                "_salto_class": "ReferenceExpression"
-              },
-              "data": {
-                "custom": true,
-                "global": true,
-                "description": "Used on the Platform Operations JSM project. Syncs with Product Line in Salesforce through the Salesforce Connnector app.",
                 "required": false
               }
             },
